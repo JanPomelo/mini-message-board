@@ -16,12 +16,15 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 
 import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other/classes';
+import { indexRouter } from '@src/routes/index';
 
 
 // **** Variables **** //
 
 const app = express();
 
+// Set view template
+app.set('view engine', 'pug');
 
 // **** Setup **** //
 
@@ -71,10 +74,7 @@ const staticDir = path.join(__dirname, 'public');
 app.use(express.static(staticDir));
 
 // Nav to users pg by default
-app.get('/', (req: Request, res: Response) => {
-  res.send("Hello!");
-});
-
+app.use('/', indexRouter);
 
 
 // **** Export default **** //
