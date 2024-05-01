@@ -1,8 +1,9 @@
 extends layout
 
 block content
-  form(method='POST' action='/new' style={ 'display': 'flex', 'flex-direction': 'column', 'gap': '10px', 'max-width': '200px' })
-    input(type='text' name='user' placeholder='User')
-    input(type='text' name='text' placeholder='Message')
+  h1= title
+  form(method='POST' action='/new')
+    input(type='text' name='user' placeholder='User' minlength='1' maxlength='20' required)
+    input(type='text' name='text' placeholder='Message' minlength='1' maxlength='140' required)
     button(type='Submit') Send Message
 

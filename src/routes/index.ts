@@ -26,7 +26,7 @@ router.get('/', (req: express.Request, res: express.Response, next: express.Next
 });
 
 router.get('/new', (req: express.Request, res: express.Response, next: express.NextFunction) => {
-  res.render('form');
+  res.render('form', { title: "Mini Message Board - New Message"});
 });
 
 router.post('/new', (req: express.Request, res: express.Response, next: express.NextFunction) => {
