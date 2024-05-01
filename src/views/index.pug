@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  ul
+    each message in messages
+      li
+        p
+          bold(style={'font-weight': 700 })= message.user
+          span(style={'font-size': '0.6rem'})= ' on ' + message.date
+          span= ': ' + message.text
