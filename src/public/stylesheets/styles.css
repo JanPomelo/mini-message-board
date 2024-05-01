@@ -1,0 +1,58 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.messageBox {
+  margin-top: 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  background-color: black;
+  color: white;
+  margin-top: 0;
+  text-align: center;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  padding: 0.5rem;
+}
+
+.message {
+  margin-right: auto;
+  margin-left: 0.75rem;
+}
+
+.messageUser {
+  font-weight: bold;
+  font-size: 0.7rem;
+  margin:0;
+}
+
+.messageBubble {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  background-color: #f0f0f0;
+  padding-top: 0.5rem;
+  padding-bottom: 1.25rem;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  border-radius: 0.75rem;
+  max-width: 300px;
+  min-width: 100px;
+  position: relative;
+  border: 1px solid #CDCDCD;
+}
+
+.messageTime {
+  position: absolute;
+  bottom: 0.25rem;
+  right: 0.5rem;
+  font-size: 0.5rem;
+}

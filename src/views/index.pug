@@ -3,10 +3,19 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  ul
+  a(href='/new') Send a new message
+  div(class='messageBox')
+    h2 Messages
     each message in messages
-      li
-        p
-          bold(style={'font-weight': 700 })= message.user
-          span(style={'font-size': '0.6rem'})= ' on ' + message.date
-          span= ': ' + message.text
+      div(class='message')
+        p(class='messageUser')= message.user
+        p(class='messageBubble')= message.text
+          -
+            const month = message.date.getMonth() + 1 > 9 ? message.date.getMonth() + 1 : `0${message.date.getMonth() + 1}`;
+            const day = message.date.getDate() > 9 ? message.date.getDate() : `0${message.date.getDate()}`;
+            const year = message.date.getFullYear();
+            const hour = message.date.getHours() > 9 ? message.date.getHours() : `0${message.date.getHours()}`;
+            const minute = message.date.getMinutes() > 9 ? message.date.getMinutes() : `0${message.date.getMinutes()}`;
+            const timeZone = message.date.toString().substring(25, 32).replaceAll('0', '');
+            const date = `${month}/${day}/${year} ${hour}:${minute} ${timeZone}`;
+          span(class='messageTime')= date

@@ -29,5 +29,11 @@ router.get('/new', (req: express.Request, res: express.Response, next: express.N
   res.render('form');
 });
 
+router.post('/new', (req: express.Request, res: express.Response, next: express.NextFunction) => {
+  const { user, text } = req.body;
+  messages.push({ user: user, text: text, date: new Date() });
+  res.redirect('/');
+});
+
 export { router as indexRouter }
 
